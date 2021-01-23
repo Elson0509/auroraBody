@@ -14,7 +14,7 @@ const InputBox = (props) => {
                 style={styles.txtInput}
                 autoFocus={true}
                 keyboardType="numeric"
-                value={props.value}
+                value={props.value.toString()}
                 onChangeText={props.changed}
             />
         </View>

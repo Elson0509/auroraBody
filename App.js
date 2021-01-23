@@ -11,6 +11,7 @@ import {
   Image,
   SafeAreaView,
   StyleSheet,
+  ScrollView,
   View,
   Text,
 } from 'react-native';
@@ -20,8 +21,8 @@ import TableBMI from './components/TableBMI'
 
 const App: () => React$Node = () => {
 
-  const [weight, setWeight] = useState(0)
-  const [height, setHeight] = useState(0)
+  const [weight, setWeight] = useState('')
+  const [height, setHeight] = useState('')
   const [result, setResult] = useState(0)
 
   const calcImc=()=>{
@@ -41,7 +42,8 @@ const App: () => React$Node = () => {
   }
 
   return (
-    <SafeAreaView style={styles.body}>
+    <SafeAreaView>
+      <ScrollView style={styles.body}>
       <View style={[styles.box, styles.borderBottomTitle]}>
         <Text style={styles.fontTitle}>Aurora Body</Text>
         <Text style={styles.fontTitle}>BMI Calculator</Text>
@@ -60,6 +62,7 @@ const App: () => React$Node = () => {
           </View>
         </Fragment>
        : null}
+       </ScrollView>
     </SafeAreaView>
   );
 };
