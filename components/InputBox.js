@@ -9,7 +9,7 @@ import {
 const InputBox = (props) => {
     return (
         <View style={styles.box}>
-            <Text>{props.text}</Text>
+            <Text style={styles.labelStyle}>{props.text}</Text>
             <TextInput
                 style={styles.txtInput}
                 autoFocus={true}
@@ -30,6 +30,12 @@ const styles = StyleSheet.create({
       borderWidth:1,
       borderColor:'black',
       borderRadius:10,
+      fontSize:20,
+      textAlign:'center'
+    },
+    labelStyle:{
+      fontSize:22,
+      marginBottom:5
     }
 });
 

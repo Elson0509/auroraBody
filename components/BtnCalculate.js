@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
       marginBottom: 20
     },
     txtBtn:{
-      fontSize:15,
+      fontSize:20,
       textTransform:'uppercase',
       color:'#fff'
     },
     btnCalc:{
-        backgroundColor:'#04562c',
+        backgroundColor:'#4CAF50',
         justifyContent:'center',
         alignItems:'center',
         padding:10,

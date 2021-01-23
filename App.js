@@ -13,11 +13,10 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableHighlight,
-  TextInput
 } from 'react-native';
 import InputBox from './components/InputBox'
 import BtnCalculate from './components/BtnCalculate'
+import TableBMI from './components/TableBMI'
 
 const App: () => React$Node = () => {
 
@@ -44,21 +43,18 @@ const App: () => React$Node = () => {
   return (
     <SafeAreaView style={styles.body}>
       <View style={styles.box}>
-        <Text>Calculadora de IMC</Text>
+        <Text>BMI Calculator</Text>
       </View>
       <InputBox text="Inform you weight:" value={weight} changed={value=>setWeight(value)}/>
       <InputBox text="Inform you height:" value={height} changed={value=>setHeight(value)}/>
-      <BtnCalculate text="Calculate IMC" press={()=>calcImc()}/>
+      <BtnCalculate text="Calculate" press={()=>calcImc()}/>
       {result ? 
         <Fragment>
           <View style={styles.box}>
             <Text>Result: {result}</Text>
           </View>
           <View style={styles.box}>
-            <Image
-              source={require('./assets/images/imc.jpg')}
-              style={styles.imgTable}
-              />
+            <TableBMI weight={result}/>
           </View>
         </Fragment>
        : null}
