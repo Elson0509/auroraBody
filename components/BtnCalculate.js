@@ -26,10 +26,12 @@ const styles = StyleSheet.create({
     txtBtn:{
       fontSize:20,
       textTransform:'uppercase',
-      color:'#fff'
+      color:'#8e5da6',
+      fontWeight:'bold',
+      letterSpacing:5
     },
     btnCalc:{
-        backgroundColor:'#ABAE2E',
+        backgroundColor:'#F5F885',
         justifyContent:'center',
         alignItems:'center',
         padding:10,

@@ -8,7 +8,6 @@
 
 import React, {useState, Fragment} from 'react';
 import {
-  Image,
   SafeAreaView,
   StyleSheet,
   ScrollView,
@@ -18,6 +17,7 @@ import {
 import InputBox from './components/InputBox'
 import BtnCalculate from './components/BtnCalculate'
 import TableBMI from './components/TableBMI'
+import ResultBox from './components/ResultBox'
 
 const App: () => React$Node = () => {
 
@@ -53,10 +53,7 @@ const App: () => React$Node = () => {
       <BtnCalculate text="Calculate" press={()=>calcImc()}/>
       {result ? 
         <Fragment>
-          <View style={[styles.box, styles.borderTop]}>
-            <Text style={[styles.resultText, styles.sizeText]}>Your Result:</Text>
-            <Text style={[styles.resultText, styles.sizeResult]}>{result}</Text>
-          </View>
+          <ResultBox result={result}/>
           <View style={styles.box}>
             <TableBMI weight={result}/>
           </View>

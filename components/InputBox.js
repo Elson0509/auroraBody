@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
       color:'white',
       fontWeight:'bold',
       fontSize:20,
-      textAlign:'center'
+      textAlign:'center',
+      backgroundColor:'#a77fba'
     },
     labelStyle:{
       fontSize:22,
