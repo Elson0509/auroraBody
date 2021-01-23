@@ -27,15 +27,18 @@ const styles = StyleSheet.create({
     },
     txtInput:{
       width:'100%',
-      borderWidth:1,
-      borderColor:'black',
-      borderRadius:10,
+      borderWidth:3,
+      borderColor:'white',
+      borderRadius:20,
+      color:'white',
+      fontWeight:'bold',
       fontSize:20,
       textAlign:'center'
     },
     labelStyle:{
       fontSize:22,
-      marginBottom:5
+      marginBottom:5,
+      color:'white'
     }
 });
 

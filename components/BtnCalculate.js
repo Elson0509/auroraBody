@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
       color:'#fff'
     },
     btnCalc:{
-        backgroundColor:'#4CAF50',
+        backgroundColor:'#ABAE2E',
         justifyContent:'center',
         alignItems:'center',
         padding:10,
