@@ -18,6 +18,8 @@ import InputBox from './components/InputBox'
 import BtnCalculate from './components/BtnCalculate'
 import TableBMI from './components/TableBMI'
 import ResultBox from './components/ResultBox'
+import ResultReport from './components/ResultReport'
+import {getScaleFromWheight, messageWeight, calcBmi} from './utils/Functions'
 
 const App: () => React$Node = () => {
 
@@ -28,37 +30,36 @@ const App: () => React$Node = () => {
   const calcImc=()=>{
     if(weight<=0 || !weight){
       alert('Please, inform your Weight!') 
-      setResult(0)
+      setResult('')
       return
     }
     if(height<=0 || !height){
       alert('Please, inform your Height!'); 
-      setResult(0)
+      setResult('')
       return
     }
-
-    const res = weight/(Math.pow(height/100,2))
-    setResult(res.toFixed(1))
+    setResult(calcBmi(weight, height))
   }
 
   return (
     <SafeAreaView>
       <ScrollView style={styles.body}>
-      <View style={[styles.box, styles.borderBottomTitle]}>
-        <Text style={styles.fontTitle}>Aurora Body</Text>
-        <Text style={styles.fontTitle}>BMI Calculator</Text>
-      </View>
-      <InputBox text="Weight (Kg):" value={weight} changed={value=>setWeight(value)}/>
-      <InputBox text="Height (cm):" value={height} changed={value=>setHeight(value)}/>
-      <BtnCalculate text="Calculate" press={()=>calcImc()}/>
-      {result ? 
-        <Fragment>
-          <ResultBox result={result}/>
-          <View style={styles.box}>
-            <TableBMI weight={result}/>
-          </View>
-        </Fragment>
-       : null}
+        <View style={[styles.box, styles.borderBottomTitle]}>
+          <Text style={styles.fontTitle}>Aurora Body</Text>
+          <Text style={styles.fontTitle}>BMI Calculator</Text>
+        </View>
+        <InputBox text="Weight (Kg):" value={weight} changed={value=>setWeight(value)}/>
+        <InputBox text="Height (cm):" value={height} changed={value=>setHeight(value)}/>
+        <BtnCalculate text="Calculate" press={()=>calcImc()}/>
+        {result ? 
+          <Fragment>
+            <ResultBox result={result}/>
+            <View style={styles.box}>
+              <TableBMI weight={result}/>
+            </View>
+            <ResultReport weight={weight} height={height} result={result}/>
+          </Fragment>
+        : null}
        </ScrollView>
     </SafeAreaView>
   );

@@ -4,37 +4,15 @@ import {
     View,
   } from 'react-native';
 import { Table, Row} from 'react-native-table-component';
+import {wheightHeader, wheightScales} from '../utils/Constants'
+import {getIndexScale} from '../utils/Functions'
 
 const TableBMI = (props) => {
-    const tableHead = ['Weight Status', 'BMI']
-    const tableBody = [
-        ['Underweight', '<18.5'],
-        ['Normal', '18.5 - 24.9'],
-        ['Overweight', '25.0 - 29.9'],
-        ['Obese Class I', '30.0 - 34.9'],
-        ['Obese Class II', '35.0 - 39.9'],
-        ['Obese Class III', '≥39.9'],
-    ]
-    const getIndexScale = (weight) =>{
-        if(weight < 18.5)
-            return 0
-        else if(weight <=24.9)
-            return 1
-        else if(weight <=29.9)
-            return 2
-        else if(weight <=34.9)
-            return 3
-        else if(weight <=39.9)
-            return 4
-        else
-            return 5
-    }
-
     return (
         <View>
             <Table>
-                <Row data={tableHead} style={styles.head} textStyle={[styles.textCenter, styles.textSizeHeader, styles.textStyleHeader]}/>
-                {tableBody.map((el, ind) => (
+                <Row data={wheightHeader} style={styles.head} textStyle={[styles.textCenter, styles.textSizeHeader, styles.textStyleHeader]}/>
+                {wheightScales.map((el, ind) => (
                     <Row 
                         key={ind} 
                         data={el} 
